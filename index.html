@@ -135,14 +135,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 24px;
+            padding: 10px 20px;
             background: #000;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 14px;
-            color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            gap: 12px;
         }
         .store-btn:hover {
             transform: translateY(-3px);
@@ -152,27 +150,11 @@
         .store-btn:active {
             transform: translateY(0);
         }
-        .btn-icon {
-            width: 40px;
-            height: 40px;
+        .badge-img {
+            width: 100%;
+            height: 64px;
             object-fit: contain;
-            border-radius: 6px;
-        }
-        .btn-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .btn-subtext {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            opacity: 0.8;
-        }
-        .btn-maintext {
-            font-size: 1.3rem;
-            font-weight: 600;
-            line-height: 1.1;
+            display: block;
         }
     </style>
 </head>
@@ -189,20 +171,12 @@
             <div class="store-buttons">
                 <!-- App Store Button -->
                 <a href="https://apps.apple.com/ke/app/futsal-booking/id6803065524" class="btn store-btn apple" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/apple.jpg" alt="App Store" class="btn-icon">
-                    <div class="btn-text">
-                        <span class="btn-subtext">Download on the</span>
-                        <span class="btn-maintext">App Store</span>
-                    </div>
+                    <img src="assets/apple.jpg" alt="Download on the App Store" class="badge-img">
                 </a>
                 
                 <!-- Google Play Button -->
                 <a href="https://play.google.com/store/apps/details?id=com.vinxyield.football_ground" class="btn store-btn google" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/playstore.png" alt="Google Play" class="btn-icon">
-                    <div class="btn-text">
-                        <span class="btn-subtext">GET IT ON</span>
-                        <span class="btn-maintext">Google Play</span>
-                    </div>
+                    <img src="assets/playstore.png" alt="Get it on Google Play" class="badge-img">
                 </a>
             </div>
         </div>
