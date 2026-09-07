@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Futsal Booking</title>
+    <meta name="description" content="Download Futsal Booking on Google Play Store and Apple App Store.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --accent-1: #2E7D32; /* VinxYield brand color */
+            --accent-2: #4CAF50;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .background-animation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            overflow: hidden;
+        }
+        .background-animation::before,
+        .background-animation::after {
+            content: '';
+            position: absolute;
+            width: 60vmin;
+            height: 60vmin;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        .background-animation::before {
+            background: radial-gradient(circle, var(--accent-1) 0%, transparent 70%);
+            top: -10%;
+            left: 10%;
+        }
+        .background-animation::after {
+            background: radial-gradient(circle, #0e2a11 0%, transparent 70%);
+            bottom: -10%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(10%, 10%) scale(1.1); }
+        }
+        .container {
+            padding: 2rem;
+            width: 100%;
+            max-width: 480px;
+            z-index: 1;
+        }
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 28px;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .app-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .app-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .app-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+        .store-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .store-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            gap: 12px;
+        }
+        .store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.4);
+        }
+        .store-btn:active {
+            transform: translateY(0);
+        }
+        .btn-icon {
+            width: 32px;
+            height: 32px;
+        }
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .btn-subtext {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+        .btn-maintext {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <main class="container">
+        <div class="glass-card">
+            <div class="logo-container">
+                <img src="../assets/ball.jpeg" alt="Futsal Booking Logo" class="app-logo">
+            </div>
+            <h1 class="app-title">Futsal Booking</h1>
+            <p class="app-description">Your ultimate app for booking futsal grounds easily and quickly.</p>
+            
+            <div class="store-buttons">
+                <!-- App Store Button -->
+                <a href="https://apps.apple.com/ke/app/futsal-booking/id6803065524" class="btn store-btn apple" target="_blank" rel="noopener noreferrer">
+                    <svg class="btn-icon" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
+                    </svg>
+                    <div class="btn-text">
+                        <span class="btn-subtext">Download on the</span>
+                        <span class="btn-maintext">App Store</span>
+                    </div>
+                </a>
+                
+                <!-- Google Play Button -->
+                <a href="https://play.google.com/store/apps/details?id=com.vinxyield.football_ground" class="btn store-btn google" target="_blank" rel="noopener noreferrer">
+                    <svg class="btn-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"></path>
+                    </svg>
+                    <div class="btn-text">
+                        <span class="btn-subtext">GET IT ON</span>
+                        <span class="btn-maintext">Google Play</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
